@@ -2,6 +2,9 @@ package org.tess.automation.controller;
 
 import java.util.Optional;
 
+import javax.management.relation.RelationNotFoundException;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +27,9 @@ public class DeviceController {
 	DeviceRepo deviceRepo;
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void insertDevice(@RequestBody Device device) {
-		deviceRepo.save(device);
+	public Device insertDevice(@RequestBody Device device) {
+		Device dev = deviceRepo.save(device);
+		return dev;
 	}
 
 	@GetMapping("/{deviceId}")
@@ -37,8 +42,35 @@ public class DeviceController {
 		deviceRepo.deleteById(deviceId);
 	}
 
-	@GetMapping("byName/{deviceName}")
-	public ResponseEntity<Device> getDeviceByName(@PathVariable("deviceName") String deviceName) {
-		return ResponseEntity.ok().body(deviceRepo.findByDeviceName(deviceName));
+	@GetMapping("byName/{projectName}/{groupName}/{deviceName}")
+	public ResponseEntity<Device> getDeviceByName(@PathVariable("projectName") String projectName,
+			@PathVariable("groupName") String groupName, @PathVariable("deviceName") String deviceName) {
+				//return null;
+		return ResponseEntity.ok().body(deviceRepo.findByProjectAndGroupNameAndName(projectName, groupName, deviceName));
+	}
+
+	@PutMapping("/{deviceId}")
+	public Device updateDevice(@PathVariable("deviceId") Long deviceId, @Valid @RequestBody Device updatedDevice) {
+
+		Device device = null;
+		try {
+			device = deviceRepo.findById(deviceId)
+					.orElseThrow(() -> new RelationNotFoundException(deviceId.toString()));
+		} catch (RelationNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		device.setConnectedNode(updatedDevice.getConnectedNode());
+		device.setConnectorSlot(updatedDevice.getConnectorSlot());
+		device.setDefaultValue(updatedDevice.getDefaultValue());
+		device.setGroupName(updatedDevice.getGroupName());
+		device.setName(updatedDevice.getName());
+		device.setProject(updatedDevice.getProject());
+		device.setType(updatedDevice.getType());
+		device.setUrlMap(updatedDevice.getUrlMap());
+		
+		Device retDevice = deviceRepo.save(device);
+		return retDevice;
 	}
 }

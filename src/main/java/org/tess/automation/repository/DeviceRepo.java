@@ -5,6 +5,8 @@ import org.tess.automation.dao.Device;
 
 public interface DeviceRepo extends JpaRepository<Device, Long> {
 
-	Device findByDeviceName(String deviceName);
+	Device findByName(String deviceName);
+
+	Device findByProjectAndGroupNameAndName(String project, String groupName, String name);
 
 }

@@ -2,6 +2,9 @@ package org.tess.automation.controller;
 
 import java.util.Optional;
 
+import javax.management.relation.RelationNotFoundException;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -9,9 +12,11 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.tess.automation.dao.Device;
 import org.tess.automation.dao.Node;
 import org.tess.automation.repository.NodeRepo;
 
@@ -23,8 +28,8 @@ public class NodeController {
 	NodeRepo nodeRepo;
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void insertNode(@RequestBody Node node) {
-		nodeRepo.save(node);
+	public Node insertNode(@RequestBody Node node) {
+		return nodeRepo.save(node);
 	}
 
 	@GetMapping("/{nodeId}")
@@ -42,4 +47,21 @@ public class NodeController {
 		return ResponseEntity.ok().body(nodeRepo.findByIp(nodeIp));
 	}
 
+	@PutMapping("/{nodeId}")
+	public Node updateNode(@PathVariable("nodeId") Long nodeId, @Valid @RequestBody Node updatedNode) {
+
+		Node node = null;
+		try {
+			node = nodeRepo.findById(nodeId)
+					.orElseThrow(() -> new RelationNotFoundException(nodeId.toString()));
+		} catch (RelationNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		node.setIp(updatedNode.getIp());
+		node.setPort(updatedNode.getPort());
+		
+		Node updatedNote = nodeRepo.save(node);
+		return updatedNote;
+	}
 }
