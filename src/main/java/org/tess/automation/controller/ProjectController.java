@@ -63,6 +63,7 @@ public class ProjectController {
 		project.setConnection_Password(updatedNode.getConnection_Password());
 		project.setIp(updatedNode.getIp());
 		project.setName(updatedNode.getName());
+		project.setNodesCount(updatedNode.getNodesCount());
 		
 		Project updatedNote = projectRepo.save(project);
 		return updatedNote;

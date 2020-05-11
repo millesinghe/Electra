@@ -19,6 +19,8 @@ public class Project {
 	private String connection_Password;
 
 	private String ip;
+	
+	private int nodesCount;
 
 	public Long getId() {
 		return id;
@@ -58,6 +60,14 @@ public class Project {
 
 	public void setIp(String ip) {
 		this.ip = ip;
+	}
+
+	public int getNodesCount() {
+		return nodesCount;
+	}
+
+	public void setNodesCount(int nodesCount) {
+		this.nodesCount = nodesCount;
 	}
 
 }
