@@ -7,7 +7,7 @@
 #include <string>
 
 #define CONN_LED 5
-#define WIFI_CONFIG 4
+#define WIFI_CONFIG 10
 
 String ssid = "";
 String password = "";
@@ -102,7 +102,7 @@ void loop()
 {
   //Wifi Connection Reset Call
   int BTN_WIFI_CONFIG_STATE = digitalRead(WIFI_CONFIG);
-  if(BTN_WIFI_CONFIG_STATE == 1)
+  if(BTN_WIFI_CONFIG_STATE == 0)
   {
     Serial.println("Launch Wifi Configuration");
     
@@ -372,10 +372,6 @@ void setupAP(void)
     // Print SSID and RSSI for each network found
     st += "<li>";
     st += WiFi.SSID(i);
-    st += " (";
-    st += WiFi.RSSI(i);
-
-    st += ")";
     st += (WiFi.encryptionType(i) == ENC_TYPE_NONE) ? " " : "*";
     st += "</li>";
   }
