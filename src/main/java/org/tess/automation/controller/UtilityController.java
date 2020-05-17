@@ -46,7 +46,7 @@ public class UtilityController {
 	public ResponseEntity<String> checkConnection(@PathVariable("projectName") String projectName) {
 
 		setMapNodes(new HashMap<>());
-
+		
 		Project pro = projectRepo.findByName(projectName);
 		nodeLimit = pro.getNodesList().size();
 
@@ -55,7 +55,7 @@ public class UtilityController {
 
 		String body = this.getMapNodes().toString();
 		ResponseEntity<String> response = new ResponseEntity<String>(body, HttpStatus.FOUND);
-		this.getAvailableNodes();
+		System.out.println("Have - " +this.getAvailableNodes().get(0).getIp());
 		this.getRemoveNodes();
 		return response;
 	}
@@ -81,7 +81,7 @@ public class UtilityController {
 				if (address.isReachable(500)) {
 					String serverUrl = "http://" + address.getHostAddress() + ":" + NODE_STANDERD_PORT + "/ping";
 					try {
-						this.checkNodeMCU(serverUrl);
+						this.checkNodeElectra(serverUrl);
 						// this.filterNodeURL(address);
 					} catch (Exception e) {
 						continue;
@@ -121,7 +121,7 @@ public class UtilityController {
 		projectRepo.save(project);
 	}
 
-	private void checkNodeMCU(String baseUrl) throws URISyntaxException {
+	private void checkNodeElectra(String baseUrl) throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
 		URI uri = new URI(baseUrl);
 		ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);

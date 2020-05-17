@@ -6,6 +6,8 @@ import javax.management.relation.RelationNotFoundException;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,17 +28,27 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RestController
 @RequestMapping("/meta/project")
 public class ProjectController {
-	
+
 	@Autowired
 	ProjectRepo projectRepo;
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Project insertProject(@RequestBody Project project) throws JsonMappingException, JsonProcessingException {
-		return projectRepo.save(project);
+	public ResponseEntity<String> insertProject(@RequestBody Project project) throws JsonMappingException, JsonProcessingException {
+		Project pro = null;
+		try{
+			 pro = projectRepo.save(project);
+		}catch (DataIntegrityViolationException e) {
+			return ResponseEntity.badRequest().body("Duplicate Project Name - "+ project.getName());
+		}
+		return ResponseEntity.ok().body(new ObjectMapper().writeValueAsString(pro));
 	}
-	
+
 	@GetMapping("/{projectId}")
 	public ResponseEntity<Optional<Project>> getProject(@PathVariable("projectId") long projectId) {
+		Optional<Project> res = projectRepo.findById(projectId);
+		if (! res.isPresent()) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 		return ResponseEntity.ok().body(projectRepo.findById(projectId));
 	}
 
@@ -50,7 +62,7 @@ public class ProjectController {
 	public ResponseEntity<Project> getProjectByName(@PathVariable("projectName") String name) {
 		return ResponseEntity.ok().body(projectRepo.findByName(name));
 	}
-	
+
 	@PutMapping("/{projectId}")
 	public Project updateProject(@PathVariable("projectId") Long projectId, @Valid @RequestBody Project updatedNode) {
 
@@ -65,7 +77,7 @@ public class ProjectController {
 		project.setConnection_SSID(updatedNode.getConnection_SSID());
 		project.setConnection_Password(updatedNode.getConnection_Password());
 		project.setName(updatedNode.getName());
-		
+
 		Project updatedNote = projectRepo.save(project);
 		return updatedNote;
 	}
