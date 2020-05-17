@@ -19,6 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.tess.automation.dao.Device;
 import org.tess.automation.repository.DeviceRepo;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @RestController
 @RequestMapping("/meta/device")
 public class DeviceController {
@@ -27,7 +31,7 @@ public class DeviceController {
 	DeviceRepo deviceRepo;
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Device insertDevice(@RequestBody Device device) {
+	public Device insertDevice(@RequestBody Device device) throws JsonMappingException, JsonProcessingException {
 		Device dev = deviceRepo.save(device);
 		return dev;
 	}

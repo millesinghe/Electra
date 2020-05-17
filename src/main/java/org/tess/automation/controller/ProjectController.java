@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.tess.automation.dao.Node;
 import org.tess.automation.dao.Project;
 import org.tess.automation.repository.ProjectRepo;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/meta/project")
@@ -28,7 +31,7 @@ public class ProjectController {
 	ProjectRepo projectRepo;
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Project insertProject(@RequestBody Project project) {
+	public Project insertProject(@RequestBody Project project) throws JsonMappingException, JsonProcessingException {
 		return projectRepo.save(project);
 	}
 	
@@ -61,9 +64,7 @@ public class ProjectController {
 
 		project.setConnection_SSID(updatedNode.getConnection_SSID());
 		project.setConnection_Password(updatedNode.getConnection_Password());
-		project.setIp(updatedNode.getIp());
 		project.setName(updatedNode.getName());
-		project.setNodesCount(updatedNode.getNodesCount());
 		
 		Project updatedNote = projectRepo.save(project);
 		return updatedNote;

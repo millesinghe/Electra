@@ -1,18 +1,14 @@
 package org.tess.automation.controller;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.tess.automation.dao.AutomataComponent;
+import org.tess.automation.dao.Node;
 import org.tess.automation.dao.Project;
 import org.tess.automation.repository.ProjectRepo;
 
@@ -37,9 +34,13 @@ public class UtilityController {
 	@Autowired
 	ProjectRepo projectRepo;
 
-	int nodeLimit;
+	private int nodeLimit;
 
 	private Map mapNodes;
+
+	private List<Node> availableNodes;
+	
+	private List<Node> removeNodes;
 
 	@GetMapping("scan/{projectName}")
 	public ResponseEntity<String> checkConnection(@PathVariable("projectName") String projectName) {
@@ -47,17 +48,19 @@ public class UtilityController {
 		setMapNodes(new HashMap<>());
 
 		Project pro = projectRepo.findByName(projectName);
-		nodeLimit = pro.getNodesCount();
+		nodeLimit = pro.getNodesList().size();
 
 		InetAddress localhost = null;
-		this.scanIPs();
+		this.scanIPs(projectName);
 
 		String body = this.getMapNodes().toString();
 		ResponseEntity<String> response = new ResponseEntity<String>(body, HttpStatus.FOUND);
+		this.getAvailableNodes();
+		this.getRemoveNodes();
 		return response;
 	}
 
-	private void scanIPs() {
+	private void scanIPs(String projectName) {
 		InetAddress localhost = null;
 		try {
 			localhost = InetAddress.getLocalHost();
@@ -71,9 +74,9 @@ public class UtilityController {
 				ip[3] = (byte) i;
 				InetAddress address = InetAddress.getByAddress(ip);
 				System.out.println(address);
-				
-				if(nodeLimit == 0) {
-					return;
+
+				if (nodeLimit == 0) {
+					break;
 				}
 				if (address.isReachable(500)) {
 					String serverUrl = "http://" + address.getHostAddress() + ":" + NODE_STANDERD_PORT + "/ping";
@@ -86,10 +89,36 @@ public class UtilityController {
 
 				}
 			}
+			Project pro = projectRepo.findByName(projectName);
+			this.updateIps(pro);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+	}
+
+	private void updateIps(Project project) {
+		Map scannedNodeList = this.mapNodes;
+		List<Node> prevProjectNodes = project.getNodesList();
+
+		availableNodes = new ArrayList<>();
+		removeNodes = new ArrayList<>();
+		
+		for (Node node : prevProjectNodes) {
+			if (scannedNodeList.get(String.valueOf(node.getId().toString())) != null) {
+				String scannedIP = scannedNodeList.get(String.valueOf(node.getId().toString())).toString()
+						.split(":")[0];
+				String prevIp = node.getIp();
+				if (!prevIp.equals(scannedNodeList.get(node.getId()))) {
+					node.setIp(scannedIP);
+					availableNodes.add(node);		
+				}
+			}else {
+				removeNodes.add(node);
+			}
+		}
+		project.setNodesList(availableNodes);
+		projectRepo.save(project);
 	}
 
 	private void checkNodeMCU(String baseUrl) throws URISyntaxException {
@@ -97,10 +126,9 @@ public class UtilityController {
 		URI uri = new URI(baseUrl);
 		ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
 
-		ObjectMapper mapper = new ObjectMapper();
 		AutomataComponent obj = null;
 		try {
-			obj = mapper.readValue(result.getBody(), AutomataComponent.class);
+			obj = new ObjectMapper().readValue(result.getBody(), AutomataComponent.class);
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -117,6 +145,14 @@ public class UtilityController {
 
 	public void setMapNodes(Map mapNodes) {
 		this.mapNodes = mapNodes;
+	}
+
+	public List<Node> getAvailableNodes() {
+		return availableNodes;
+	}
+
+	public List<Node> getRemoveNodes() {
+		return removeNodes;
 	}
 
 }

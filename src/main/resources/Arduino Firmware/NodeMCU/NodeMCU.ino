@@ -6,14 +6,14 @@
 
 #include <string>
 
-#define CONN_LED 5
+#define CONN_LED 9
 #define WIFI_CONFIG 10
 
 String ssid = "";
 String password = "";
 
-const char* nodeId = "001";
-const char* nodeType = "nodeMCU";
+const int nodeId = 1;
+const char* nodeType = "node-mini";
 const int RECONNECT_INTEVAL = 1000;
 const int NODE_PORT = 5000;
 
@@ -33,7 +33,8 @@ void setup() {
 
   // REGISTER THE PINMODE OF YOUR NODE ----------------------
  
-  //pinMode(4, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
 
   
   pinMode(LED_BUILTIN, OUTPUT);  
@@ -88,7 +89,7 @@ void setup() {
   }
 
   Serial.println();
-  Serial.println("Waiting.");
+  Serial.println("Waiting for the Wifi Config.");
   
   while ((WiFi.status() != WL_CONNECTED))
   {
@@ -380,7 +381,6 @@ void setupAP(void)
   WiFi.softAP("Electra Config Server", "");
   Serial.println("Connect to 'Electra Config Server'");
   launchWeb();
-  Serial.println("over");
 }
 
 void createWebServer()

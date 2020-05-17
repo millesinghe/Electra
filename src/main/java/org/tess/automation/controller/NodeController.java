@@ -58,9 +58,10 @@ public class NodeController {
 			e.printStackTrace();
 		}
 
+		node.setType(updatedNode.getType());
 		node.setIp(updatedNode.getIp());
 		node.setPort(updatedNode.getPort());
-		
+		node.setProject(updatedNode.getProject());
 		Node updatedNote = nodeRepo.save(node);
 		return updatedNote;
 	}

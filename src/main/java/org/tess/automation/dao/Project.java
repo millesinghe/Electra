@@ -1,12 +1,22 @@
 package org.tess.automation.dao;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-public class Project {
+public class Project implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +28,9 @@ public class Project {
 
 	private String connection_Password;
 
-	private String ip;
-	
-	private int nodesCount;
+	@OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+	@JsonManagedReference
+	private List<Node> nodesList;
 
 	public Long getId() {
 		return id;
@@ -54,20 +64,18 @@ public class Project {
 		this.connection_Password = connection_Password;
 	}
 
-	public String getIp() {
-		return ip;
+	public List<Node> getNodesList() {
+		return nodesList;
 	}
 
-	public void setIp(String ip) {
-		this.ip = ip;
+	public void setNodesList(List<Node> nodesList) {
+		this.nodesList = nodesList;
 	}
 
-	public int getNodesCount() {
-		return nodesCount;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
-	public void setNodesCount(int nodesCount) {
-		this.nodesCount = nodesCount;
-	}
+
 
 }

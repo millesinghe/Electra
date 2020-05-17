@@ -1,5 +1,6 @@
 package org.tess.automation.dao;
 
+import java.io.Serializable;
 import java.util.Map;
 
 import javax.persistence.ElementCollection;
@@ -8,12 +9,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-public class Device {
+public class Device implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,9 +30,9 @@ public class Device {
 	private String type;
 
 	private String defaultValue;
-	
+
 	private String project;
-	
+
 	public String getProject() {
 		return project;
 	}
@@ -37,8 +41,9 @@ public class Device {
 		this.project = project;
 	}
 
-	@OneToOne
-	@JoinColumn(referencedColumnName = "id")
+	@ManyToOne
+    @JoinColumn(name = "node_id")
+	@JsonBackReference
 	private Node connectedNode;
 
 	private String connectorSlot;
@@ -109,7 +114,5 @@ public class Device {
 
 	public void setUrlMap(Map<String, String> urlMap) {
 		this.urlMap = urlMap;
-	}	
-	
-
+	}
 }
