@@ -28,6 +28,13 @@ This application is provides user friendly web service based IoT device launchin
 <li>Web Service API - API layer for integrate users interaction with the system</li>
 <li>Electra Database - Store the system related details</li>
 </ul>
+<h2 id="electra-node">API Layer</h2>
+
+
+
+
+
+
 <h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the <strong>New file</strong> button in the file explorer. You can also create folders by clicking the <strong>New folder</strong> button.</p>
 <h2 id="switch-to-another-file">Switch to another file</h2>
@@ -288,5 +295,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDgzNjI4OTYsNTMxNTg4ODYyXX0=
+eyJoaXN0b3J5IjpbMTY1NjA0MDIyMSw1MzE1ODg4NjJdfQ==
 -->
