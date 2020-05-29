@@ -25,7 +25,7 @@ This application is provides user friendly web service based IoT device launchin
 <h1 id="components">Components</h1>
 <ul>
 <li>Electra Node - Conector of the Home equipment with the smart home system.</li>
-<li>Web Service API - API layer for integrate users with the system</li>
+<li>Web Service API - API layer for integrate users interaction with the system</li>
 <li>Electra Database - Store the system related details</li>
 </ul>
 <h2 id="electra-node">Electra Node</h2>
@@ -288,5 +288,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTMxNTg4ODYyXX0=
+eyJoaXN0b3J5IjpbLTEyMDgzNjI4OTYsNTMxNTg4ODYyXX0=
 -->
