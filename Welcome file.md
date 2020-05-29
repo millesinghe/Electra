@@ -1,34 +1,39 @@
 <h1 id="electra-smart-home-solution">Electra Smart Home Solution</h1>
 <p>This project is design for provide solution for smart home with digitizing the home equipment managements. Project based on with IoT technologies with Software development techniques.<br>
 This application is provides user friendly web service based IoT device launching capability without having the advance knowledge on Arduino or NodeMCU devices</p>
-<h1 id="hardware-and-software">Hardware and Software</h1>
+<h2 id="hardware-and-software">Hardware and Software</h2>
 <ul>
-<li>Hardware Devices
+<li><strong>Hardware Devices</strong>
 <ul>
 <li>Arduino</li>
 <li>NodeMCU - ESP8266 SP2101</li>
 </ul>
 </li>
-<li>Software Technologies
+<li><strong>Software Technologies<strong>
 <ul>
 <li>Java</li>
 <li>Spring</li>
 <li>Hibernate</li>
 </ul>
 </li>
-<li>Database Technology
+<li><strong>Database Technology
 <ul>
 <li>MySQL</li>
 </ul>
 </li>
 </ul>
-<h1 id="components">Components</h1>
+<h2 id="components">Components</h2>
 <ul>
 <li>Electra Node - Conector of the Home equipment with the smart home system.</li>
 <li>Web Service API - API layer for integrate users interaction with the system</li>
 <li>Electra Database - Store the system related details</li>
 </ul>
+
+<h2 id="electra-node">System Architecture</h2>
+
+
 <h2 id="electra-node">API Layer</h2>
+
 
 
 
@@ -295,5 +300,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1NjA0MDIyMSw1MzE1ODg4NjJdfQ==
+eyJoaXN0b3J5IjpbLTIxMzAwNDM2MzMsNTMxNTg4ODYyXX0=
 -->
