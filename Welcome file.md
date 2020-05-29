@@ -9,14 +9,14 @@ This application is provides user friendly web service based IoT device launchin
 <li>NodeMCU - ESP8266 SP2101</li>
 </ul>
 </li>
-<li><strong>Software Technologies<strong>
+<li><strong>Software Technologies</strong>
 <ul>
 <li>Java</li>
 <li>Spring</li>
 <li>Hibernate</li>
 </ul>
 </li>
-<li><strong>Database Technology
+<li><strong>Database Technology</strong>
 <ul>
 <li>MySQL</li>
 </ul>
@@ -24,16 +24,23 @@ This application is provides user friendly web service based IoT device launchin
 </ul>
 <h2 id="components">Components</h2>
 <ul>
-<li>Electra Node - Conector of the Home equipment with the smart home system.</li>
-<li>Web Service API - API layer for integrate users interaction with the system</li>
-<li>Electra Database - Store the system related details</li>
+<li><strong>Electra Node </strong>- Conector of the Home equipment with the smart home system.</li>
+<li><strong>Web Service API </strong>- API layer for integrate users interaction with the system</li>
+<li><strong>Electra Database </strong>- Store the system related details</li>
 </ul>
 
 <h2 id="electra-node">System Architecture</h2>
 
 
 <h2 id="electra-node">API Layer</h2>
+<h3><strong>Project APIs<strong><h3>
 
+
+<h3><strong>Project<Electra Node APIs><h3>
+
+
+
+<h3><strong>Project<strong><h3>
 
 
 
@@ -300,5 +307,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzAwNDM2MzMsNTMxNTg4ODYyXX0=
+eyJoaXN0b3J5IjpbMTQ0NzQ0MTM4OSw1MzE1ODg4NjJdfQ==
 -->
