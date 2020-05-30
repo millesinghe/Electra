@@ -105,6 +105,9 @@ Server Default URL is [](http://localhost:4999)
 <h2> How to Setup </h2>
 
 <h3>API Server (Spring boot)</h3>
+Download the project from Github.
+
+    git clone 
 
 <h3>Database Server (MySQL)</h3>
 
@@ -119,9 +122,9 @@ Server Default URL is [](http://localhost:4999)
 
 <h3>Web UI Server (React)</h3>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM0OTMwLDQyOTM5NzY0OSwtMjgzMzA1Mz
-QsLTE5ODI1NjkwNzEsLTQ1MTI1NjIwMSwxNjkwODg3MzE5LDIz
-ODkxMTE5MSwtMzU4MDgyMTUxLDEyOTYyNDUwNTksODYzMjQ3OD
-Y5LC0xMTUzODUzODcsLTE0MzM3MTAzMTYsLTMzMjQ1NTM2M119
-
+eyJoaXN0b3J5IjpbLTEyODk1NjA4NzAsNDI5Mzk3NjQ5LC0yOD
+MzMDUzNCwtMTk4MjU2OTA3MSwtNDUxMjU2MjAxLDE2OTA4ODcz
+MTksMjM4OTExMTkxLC0zNTgwODIxNTEsMTI5NjI0NTA1OSw4Nj
+MyNDc4NjksLTExNTM4NTM4NywtMTQzMzcxMDMxNiwtMzMyNDU1
+MzYzXX0=
 -->
