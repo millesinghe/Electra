@@ -79,9 +79,11 @@ Server Default URL is [](http://localhost:4999)
 
  - GET a Device 
 	 - *URL* - 
-	
+		  - by Id - 
+		  http://localhost:4999/meta/device/1
+					  OR
+		 - by Device byName- http://localhost:4999/meta/device/byName/MilindaHouse/MilindaRoom/RoomLight
 	 - *REQUEST TYPE -* GET
-	 - *DATA* - 
  - CREATE a Device 
 	  - *URL* - http://localhost:4999/meta/device
 	 - *REQUEST TYPE* - POST
@@ -96,7 +98,7 @@ Server Default URL is [](http://localhost:4999)
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU5MTU1OTA0LDE2OTA4ODczMTksMjM4OT
+eyJoaXN0b3J5IjpbODE5NDIzODY2LDE2OTA4ODczMTksMjM4OT
 ExMTkxLC0zNTgwODIxNTEsMTI5NjI0NTA1OSw4NjMyNDc4Njks
 LTExNTM4NTM4NywtMTQzMzcxMDMxNiwtMzMyNDU1MzYzXX0=
 -->
