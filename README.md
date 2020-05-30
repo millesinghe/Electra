@@ -31,7 +31,7 @@ This application is provides user friendly web service based IoT device launchin
 </ul>
 
 <h2 id="electra-node">System Architecture</h2>
-![](img/Architecture.PNG)
+![](https://github.com/millesinghe/Electra/blob/master/img/Architecture.PNG)
 
 <h2 id="electra-node">API Layer</h2>
 <h3><strong>Project APIs</strong></h3><h3>
@@ -40,6 +40,7 @@ This application is provides user friendly web service based IoT device launchin
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5NjI0NTA1OSw4NjMyNDc4NjksLTExNT
-M4NTM4NywtMTQzMzcxMDMxNiwtMzMyNDU1MzYzXX0=
+eyJoaXN0b3J5IjpbLTM1ODA4MjE1MSwxMjk2MjQ1MDU5LDg2Mz
+I0Nzg2OSwtMTE1Mzg1Mzg3LC0xNDMzNzEwMzE2LC0zMzI0NTUz
+NjNdfQ==
 -->
