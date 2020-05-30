@@ -27,9 +27,12 @@ This application is provides user friendly web service based IoT device launchin
 <li><strong>Electra Node </strong>- Conector of the Home equipment with the smart home system.</li>
 <li><strong>Web Service API </strong>- API layer for integrate users interaction with the system</li>
 <li><strong>Electra Database </strong>- Store the system related details</li>
-<li><strong>Electra Web UI</strong>- Userfriendly user interaction web interface </li>
+<li><strong>Electra Web UI</strong>- Userfriendly user interaction web interface. Project repository is [here](https://github.com/millesinghe/ElectraWeb).</li>
 </ul>
+
 <h2 id="electra-node">System Architecture</h2>
+
+
 <h2 id="electra-node">API Layer</h2>
 <h3><strong>Project APIs</strong></h3><h3>
 </h3><h3><strong>Electra Node APIs</strong></h3><h3>
@@ -37,6 +40,6 @@ This application is provides user friendly web service based IoT device launchin
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0NDUxMjgwMSwtMTE1Mzg1Mzg3LC0xND
-MzNzEwMzE2LC0zMzI0NTUzNjNdfQ==
+eyJoaXN0b3J5IjpbODYzMjQ3ODY5LC0xMTUzODUzODcsLTE0Mz
+M3MTAzMTYsLTMzMjQ1NTM2M119
 -->
