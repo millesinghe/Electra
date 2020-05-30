@@ -113,15 +113,15 @@ Server Default URL is [](http://localhost:4999)
 > spring.datasource.username= 
 > 	spring.datasource.password=
 
- 3. 
+ 3. Create a database named *"electra"* in the mySQL database.
  4. Execute the Spring boot application (Run as Java Application)
- 5. Database 
+ 5. Database schema will be automatically creates
 
 <h3>Web UI Server (React)</h3>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4NjI0NzE5Niw0MjkzOTc2NDksLTI4Mz
-MwNTM0LC0xOTgyNTY5MDcxLC00NTEyNTYyMDEsMTY5MDg4NzMx
-OSwyMzg5MTExOTEsLTM1ODA4MjE1MSwxMjk2MjQ1MDU5LDg2Mz
-I0Nzg2OSwtMTE1Mzg1Mzg3LC0xNDMzNzEwMzE2LC0zMzI0NTUz
-NjNdfQ==
+eyJoaXN0b3J5IjpbNzM0OTMwLDQyOTM5NzY0OSwtMjgzMzA1Mz
+QsLTE5ODI1NjkwNzEsLTQ1MTI1NjIwMSwxNjkwODg3MzE5LDIz
+ODkxMTE5MSwtMzU4MDgyMTUxLDEyOTYyNDUwNTksODYzMjQ3OD
+Y5LC0xMTUzODUzODcsLTE0MzM3MTAzMTYsLTMzMjQ1NTM2M119
+
 -->
