@@ -94,12 +94,12 @@ Server Default URL is [](http://localhost:4999)
 	 - *CONTENT-TYPE -* application/json
 	 - *DATA* - {"id":1,"name":"RoomLight","groupName":"MilindaRoom","type":"DSwitch","defaultValue":"0","project":"MilindaHouse","connectedNode":{"id":1,"ip":"192.168.8.5","port":8081},"connectorSlot":"4","urlMap":{"ON":"http://192.168.8.100:8081/output/4/1/","OFF":"http://192.168.8.100:8081/output/4/0/"}}
 
-Request to Scan 
+Request to Scan Electra Node Connected to the Existing Wi-Fi :
 
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTgzMjI3NTMwLC0xOTgyNTY5MDcxLC00NT
+eyJoaXN0b3J5IjpbMzk5NTgyNTY2LC0xOTgyNTY5MDcxLC00NT
 EyNTYyMDEsMTY5MDg4NzMxOSwyMzg5MTExOTEsLTM1ODA4MjE1
 MSwxMjk2MjQ1MDU5LDg2MzI0Nzg2OSwtMTE1Mzg1Mzg3LC0xND
 MzNzEwMzE2LC0zMzI0NTUzNjNdfQ==
