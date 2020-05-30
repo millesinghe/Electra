@@ -96,12 +96,15 @@ Server Default URL is [](http://localhost:4999)
 
 **Request to Scan Electra Node Connected to the Existing Wi-Fi** http://localhost:4999/manage/scan/{projectName}
 
-Trigger a Switch/Device by REST request :
-http://localhost:4999/control/switch
+**Trigger a Switch/Device by REST request :**
+ - *URL* - http://localhost:4999/control/switch
+ - *Data* - 
+
+
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjk5ODk5MTgsLTE5ODI1NjkwNzEsLT
+eyJoaXN0b3J5IjpbLTE0NzY1NDIxMTUsLTE5ODI1NjkwNzEsLT
 Q1MTI1NjIwMSwxNjkwODg3MzE5LDIzODkxMTE5MSwtMzU4MDgy
 MTUxLDEyOTYyNDUwNTksODYzMjQ3ODY5LC0xMTUzODUzODcsLT
 E0MzM3MTAzMTYsLTMzMjQ1NTM2M119
