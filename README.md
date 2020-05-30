@@ -102,10 +102,12 @@ Server Default URL is [](http://localhost:4999)
  - *URL* - http://localhost:4999/control/switch
  - *Data* - {"isDigital":true,"value":"1","device":{"device":"RoomLight","groupName":"MilindaRoom","project":"MilindaHouse"}}
 
+<h2> How to Setup </h2>
 
+API Server
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4MzMwNTM0LC0xOTgyNTY5MDcxLC00NT
-EyNTYyMDEsMTY5MDg4NzMxOSwyMzg5MTExOTEsLTM1ODA4MjE1
-MSwxMjk2MjQ1MDU5LDg2MzI0Nzg2OSwtMTE1Mzg1Mzg3LC0xND
-MzNzEwMzE2LC0zMzI0NTUzNjNdfQ==
+eyJoaXN0b3J5IjpbNTI4NjcyNjM2LC0yODMzMDUzNCwtMTk4Mj
+U2OTA3MSwtNDUxMjU2MjAxLDE2OTA4ODczMTksMjM4OTExMTkx
+LC0zNTgwODIxNTEsMTI5NjI0NTA1OSw4NjMyNDc4NjksLTExNT
+M4NTM4NywtMTQzMzcxMDMxNiwtMzMyNDU1MzYzXX0=
 -->
