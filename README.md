@@ -77,25 +77,25 @@ Server Default URL is [](http://localhost:4999)
 
 <h3><strong>Devices APIs<strong></strong></strong></h3>
 
- - GET a Device - 
+ - GET a Device 
 	 - *URL* - http://localhost:4999/meta/device
-	 - *REQUEST TYPE -* POST
+	 - *REQUEST TYPE -* GET
 	 - *DATA* - 
- - CREATE a Device - http://localhost:4999/meta/device
-	  - *URL* - 
-	 - *REQUEST TYPE* -
+ - CREATE a Device 
+	  - *URL* - http://localhost:4999/meta/device
+	 - *REQUEST TYPE* - POST
 	 - *CONTENT-TYPE -* application/json 
 	 - *DATA* - 
- - Edit a Device- http://localhost:4999/meta/device
- 	 - *URL - 
-	 - REQUEST TYPE - 
+ - Edit a Device
+ 	 - *URL - http://localhost:4999/meta/device/{}
+	 - REQUEST TYPE - PUT
 	 - *CONTENT-TYPE -* application/json
 	 - DATA* - 
 
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwMjg4OTE2OSwxNjkwODg3MzE5LDIzOD
+eyJoaXN0b3J5IjpbLTQ1ODYzMDk0MCwxNjkwODg3MzE5LDIzOD
 kxMTE5MSwtMzU4MDgyMTUxLDEyOTYyNDUwNTksODYzMjQ3ODY5
 LC0xMTUzODUzODcsLTE0MzM3MTAzMTYsLTMzMjQ1NTM2M119
 -->
