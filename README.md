@@ -34,22 +34,31 @@ This application is provides user friendly web service based IoT device launchin
 ![Design](https://github.com/millesinghe/Electra/blob/master/img/Architecture.png)
 
 <h2 id="electra-node">API Layer</h2>
-<h3><strong>Project APIs</strong></h3><h3>
+Server Default URL
 
  - GET a Project - 
-	 - URL - 
+	 - URL - http://localhost:4999/meta/project
 	 - REQUEST TYPE - 
 	 - DATA - 
  - CREATE a Project - 
+	  - URL - 
+	 - REQUEST TYPE - 
+	 - DATA - 
  - Edit a Project - 
+ 	 - URL - 
+	 - REQUEST TYPE - 
+	 - DATA - 
  - DELETE a Project - 
+ 	 - URL - 
+	 - REQUEST TYPE - 
+	 - DATA - 
 
 </h3><h3><strong>Electra Node APIs</strong></h3><h3>
 </h3><h3><strong>Devices APIs<strong></strong></strong></h3><h3>
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIxNjI5NzUyLC0zNTgwODIxNTEsMTI5Nj
-I0NTA1OSw4NjMyNDc4NjksLTExNTM4NTM4NywtMTQzMzcxMDMx
-NiwtMzMyNDU1MzYzXX0=
+eyJoaXN0b3J5IjpbLTEyNTM3NjM1MTAsLTM1ODA4MjE1MSwxMj
+k2MjQ1MDU5LDg2MzI0Nzg2OSwtMTE1Mzg1Mzg3LC0xNDMzNzEw
+MzE2LC0zMzI0NTUzNjNdfQ==
 -->
