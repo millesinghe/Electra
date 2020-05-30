@@ -94,18 +94,18 @@ Server Default URL is [](http://localhost:4999)
 	 - *CONTENT-TYPE -* application/json
 	 - *DATA* - {"id":1,"name":"RoomLight","groupName":"MilindaRoom","type":"DSwitch","defaultValue":"0","project":"MilindaHouse","connectedNode":{"id":1,"ip":"192.168.8.5","port":8081},"connectorSlot":"4","urlMap":{"ON":"http://192.168.8.100:8081/output/4/1/","OFF":"http://192.168.8.100:8081/output/4/0/"}}
 
+<h3>Controller API Requests </h3>
+
 **Request to Scan Electra Node Connected to the Existing Wi-Fi** http://localhost:4999/manage/scan/{projectName}
 
 **Trigger a Switch/Device by REST request :**
  - *URL* - http://localhost:4999/control/switch
- - *Data* - 
+ - *Data* - {"isDigital":true,"value":"1","device":{"device":"RoomLight","groupName":"MilindaRoom","project":"MilindaHouse"}}
 
 
-</h3><h2 id="electra-node">Electra Node</h2>
-<p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzY1NDIxMTUsLTE5ODI1NjkwNzEsLT
-Q1MTI1NjIwMSwxNjkwODg3MzE5LDIzODkxMTE5MSwtMzU4MDgy
-MTUxLDEyOTYyNDUwNTksODYzMjQ3ODY5LC0xMTUzODUzODcsLT
-E0MzM3MTAzMTYsLTMzMjQ1NTM2M119
+eyJoaXN0b3J5IjpbLTI4MzMwNTM0LC0xOTgyNTY5MDcxLC00NT
+EyNTYyMDEsMTY5MDg4NzMxOSwyMzg5MTExOTEsLTM1ODA4MjE1
+MSwxMjk2MjQ1MDU5LDg2MzI0Nzg2OSwtMTE1Mzg1Mzg3LC0xND
+MzNzEwMzE2LC0zMzI0NTUzNjNdfQ==
 -->
