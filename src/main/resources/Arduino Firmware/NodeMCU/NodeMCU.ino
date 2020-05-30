@@ -24,6 +24,7 @@ int LEDTIME;
 String st;
 String content;
 
+//SiftAP Config the Wifi Connection = 192.168.4.1
 //Establishing Local server at port 80 whenever required
 ESP8266WebServer httpServer(80);
 WiFiServer server(NODE_PORT);
