@@ -105,9 +105,13 @@ Server Default URL is [](http://localhost:4999)
 <h2> How to Setup </h2>
 
 <h3>API Server (Spring boot)</h3>
-Download the project from Github.
 
-    git clone 
+ 1. Download the project from Github.
+
+    git clone https://github.com/millesinghe/Electra.git
+
+ 2. import it to an IDE
+ 3. Run it as java appllication 
 
 <h3>Database Server (MySQL)</h3>
 
@@ -122,9 +126,9 @@ Download the project from Github.
 
 <h3>Web UI Server (React)</h3>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODk1NjA4NzAsNDI5Mzk3NjQ5LC0yOD
-MzMDUzNCwtMTk4MjU2OTA3MSwtNDUxMjU2MjAxLDE2OTA4ODcz
-MTksMjM4OTExMTkxLC0zNTgwODIxNTEsMTI5NjI0NTA1OSw4Nj
-MyNDc4NjksLTExNTM4NTM4NywtMTQzMzcxMDMxNiwtMzMyNDU1
-MzYzXX0=
+eyJoaXN0b3J5IjpbMTk2ODI0NTkzMCw0MjkzOTc2NDksLTI4Mz
+MwNTM0LC0xOTgyNTY5MDcxLC00NTEyNTYyMDEsMTY5MDg4NzMx
+OSwyMzg5MTExOTEsLTM1ODA4MjE1MSwxMjk2MjQ1MDU5LDg2Mz
+I0Nzg2OSwtMTE1Mzg1Mzg3LC0xNDMzNzEwMzE2LC0zMzI0NTUz
+NjNdfQ==
 -->
