@@ -108,12 +108,14 @@ Server Default URL is [](http://localhost:4999)
 
 <h3>Database Server (MySQL)</h3>
 
+ 1. Need to Install MySQL Database
+ 2. Config the credential details of the Database in application.properties file in the Electra Spring boot application.
 
 <h3>Web UI Server (React)</h3>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTE4ODMzOTMsNDI5Mzk3NjQ5LC0yOD
-MzMDUzNCwtMTk4MjU2OTA3MSwtNDUxMjU2MjAxLDE2OTA4ODcz
-MTksMjM4OTExMTkxLC0zNTgwODIxNTEsMTI5NjI0NTA1OSw4Nj
-MyNDc4NjksLTExNTM4NTM4NywtMTQzMzcxMDMxNiwtMzMyNDU1
-MzYzXX0=
+eyJoaXN0b3J5IjpbNjcxODE5NTgzLDQyOTM5NzY0OSwtMjgzMz
+A1MzQsLTE5ODI1NjkwNzEsLTQ1MTI1NjIwMSwxNjkwODg3MzE5
+LDIzODkxMTE5MSwtMzU4MDgyMTUxLDEyOTYyNDUwNTksODYzMj
+Q3ODY5LC0xMTUzODUzODcsLTE0MzM3MTAzMTYsLTMzMjQ1NTM2
+M119
 -->
