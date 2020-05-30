@@ -31,7 +31,7 @@ This application is provides user friendly web service based IoT device launchin
 </ul>
 
 <h2 id="electra-node">System Architecture</h2>
-![Design](https://github.com/millesinghe/Electra/blob/master/img/Architecture.png)
+![Design](/img/Architecture.png)
 
 <h2 id="electra-node">API Layer</h2>
 Server Default URL is [](http://localhost:4999)
