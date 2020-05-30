@@ -80,7 +80,7 @@ Server Default URL is [](http://localhost:4999)
  - GET a Device 
 	 - *URL* - 
 		  - by Id - 
-		  http://localhost:4999/meta/device/1
+		  http://localhost:4999/meta/device/{id}
 					  OR
 		 - by Device byName- http://localhost:4999/meta/device/byName/MilindaHouse/MilindaRoom/RoomLight
 	 - *REQUEST TYPE -* GET
@@ -88,17 +88,17 @@ Server Default URL is [](http://localhost:4999)
 	  - *URL* - http://localhost:4999/meta/device
 	 - *REQUEST TYPE* - POST
 	 - *CONTENT-TYPE -* application/json 
-	 - *DATA* - 
+	 - *DATA* - {"id":1,"name":"MilindaSwitch","groupName":"MilindaRoom","type":"bulb","defaultValue":"0","project":"MilindaHouse","connectedNode":{"id":1,"type":"node-micro","ip":"192.168.1.2","port":5000,"project":{"id":1,"name":"MilindaHouse","connection_SSID":"SLT FIBRE","connection_Password":"19511110"}},"connectorSlot":"3","urlMap":{"Switch-On":"http://192.168.1.5:8081/operate/switchOn","Switch-Off":"http://192.168.1.5:8081/operate/switchOff"}}
  - Edit a Device
- 	 - *URL - http://localhost:4999/meta/device/{id}
+ 	 - *URL* - http://localhost:4999/meta/device/{id}
 	 - REQUEST TYPE - PUT
 	 - *CONTENT-TYPE -* application/json
-	 - DATA* - 
+	 - *DATA* - {"id":1,"name":"RoomLight","groupName":"MilindaRoom","type":"DSwitch","defaultValue":"0","project":"MilindaHouse","connectedNode":{"id":1,"ip":"192.168.8.5","port":8081},"connectorSlot":"4","urlMap":{"ON":"http://192.168.8.100:8081/output/4/1/","OFF":"http://192.168.8.100:8081/output/4/0/"}}
 
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE5NDIzODY2LDE2OTA4ODczMTksMjM4OT
-ExMTkxLC0zNTgwODIxNTEsMTI5NjI0NTA1OSw4NjMyNDc4Njks
-LTExNTM4NTM4NywtMTQzMzcxMDMxNiwtMzMyNDU1MzYzXX0=
+eyJoaXN0b3J5IjpbLTQ1MTI1NjIwMSwxNjkwODg3MzE5LDIzOD
+kxMTE5MSwtMzU4MDgyMTUxLDEyOTYyNDUwNTksODYzMjQ3ODY5
+LC0xMTUzODUzODcsLTE0MzM3MTAzMTYsLTMzMjQ1NTM2M119
 -->
