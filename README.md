@@ -104,9 +104,13 @@ Server Default URL is [](http://localhost:4999)
 
 <h2> How to Setup </h2>
 
-API Server
+<h3>API Server (Spring boot)</h3>
+
+<h3>Database Server (MySQL)</h3>
+
+<h3>Web UI Server (React)</h3>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI4NjcyNjM2LC0yODMzMDUzNCwtMTk4Mj
+eyJoaXN0b3J5IjpbNDI5Mzk3NjQ5LC0yODMzMDUzNCwtMTk4Mj
 U2OTA3MSwtNDUxMjU2MjAxLDE2OTA4ODczMTksMjM4OTExMTkx
 LC0zNTgwODIxNTEsMTI5NjI0NTA1OSw4NjMyNDc4NjksLTExNT
 M4NTM4NywtMTQzMzcxMDMxNiwtMzMyNDU1MzYzXX0=
