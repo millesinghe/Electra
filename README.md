@@ -31,7 +31,7 @@ This application is provides user friendly web service based IoT device launchin
 </ul>
 
 <h2 id="electra-node">System Architecture</h2>
-![Design](/img/Architecture.png)
+![Design](img/Architecture.png)
 
 <h2 id="electra-node">API Layer</h2>
 Server Default URL is [](http://localhost:4999)
@@ -98,7 +98,8 @@ Server Default URL is [](http://localhost:4999)
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1MTI1NjIwMSwxNjkwODg3MzE5LDIzOD
-kxMTE5MSwtMzU4MDgyMTUxLDEyOTYyNDUwNTksODYzMjQ3ODY5
-LC0xMTUzODUzODcsLTE0MzM3MTAzMTYsLTMzMjQ1NTM2M119
+eyJoaXN0b3J5IjpbLTE5ODI1NjkwNzEsLTQ1MTI1NjIwMSwxNj
+kwODg3MzE5LDIzODkxMTE5MSwtMzU4MDgyMTUxLDEyOTYyNDUw
+NTksODYzMjQ3ODY5LC0xMTUzODUzODcsLTE0MzM3MTAzMTYsLT
+MzMjQ1NTM2M119
 -->
