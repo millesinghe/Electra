@@ -53,22 +53,17 @@ Server Default URL is [](http://localhost:4999)
 	 - *DATA* - {"name":"MilindaHouse","connection_SSID":"SLT FIBRE","connection_Password":"12341234","nodesList":null}
 	 
  - Edit a Project - 
- 	 - *URL - http://localhost:4999/meta/project
+ 	 - *URL - http://localhost:4999/meta/project/1
 	 - REQUEST TYPE - PUT
-	 - DATA* - 
- - DELETE a Project - 
- 	 - *URL - http://localhost:4999/meta/project
-	 - REQUEST TYPE - DELETE
-	 - *CONTENT-TYPE -* application/json
-	 - DATA* - 
+	 - DATA* - {"name":"MilindaHouse","connection_SSID":"SLT FIBRE","connection_Password":"19511119","ip":"192.168.8.100","nodesCount":1}
 
 <h3><strong>Electra Node APIs</strong></h3>
 
- - GET a Project - 
-	 - *URL* - http://localhost:4999/meta/project
+ - GET an Electra Node- 
+	 - *URL* - 
 	 - *REQUEST TYPE -* POST
 	 - *DATA* - 
- - CREATE a Project - 
+ - CREATE an Electra Node- 
 	  - *URL* - 
 	 - *REQUEST TYPE* - 
 	 - *CONTENT-TYPE -* application/json
@@ -109,7 +104,7 @@ Server Default URL is [](http://localhost:4999)
 </h3><h2 id="electra-node">Electra Node</h2>
 <p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTA5MjYzMzMsMjM4OTExMTkxLC0zNT
-gwODIxNTEsMTI5NjI0NTA1OSw4NjMyNDc4NjksLTExNTM4NTM4
-NywtMTQzMzcxMDMxNiwtMzMyNDU1MzYzXX0=
+eyJoaXN0b3J5IjpbLTM2NTU3MDQ4NCwyMzg5MTExOTEsLTM1OD
+A4MjE1MSwxMjk2MjQ1MDU5LDg2MzI0Nzg2OSwtMTE1Mzg1Mzg3
+LC0xNDMzNzEwMzE2LC0zMzI0NTUzNjNdfQ==
 -->
