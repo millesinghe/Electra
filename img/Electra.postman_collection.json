@@ -1,0 +1,283 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Electra",
+		"_postman_id": "6075b32e-e434-b1e6-1fdb-5a9c5d51ac7f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "meta",
+			"description": "",
+			"item": [
+				{
+					"name": "Project",
+					"description": "",
+					"item": [
+						{
+							"name": "addProjects",
+							"request": {
+								"url": "http://localhost:4999/meta/project",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\":\"MilindaHouse\",\"connection_SSID\":\"SLT FIBRE\",\"connection_Password\":\"19511110\",\"nodesList\":null}\r\n\r\n"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "getProjectById",
+							"request": {
+								"url": "http://localhost:4999/meta/project/1",
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\":\"MilindaHouse\",\"connection_SSID\":\"SLT FIBRE\",\"connection_Password\":\"19511110\",\"ip\":\"192.168.8.1\"}\r\n"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "updateProjects",
+							"request": {
+								"url": "http://localhost:4999/meta/project/1",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\":\"MilindaHouse\",\"connection_SSID\":\"SLT FIBRE\",\"connection_Password\":\"19511119\",\"ip\":\"192.168.8.100\",\"nodesCount\":1}\r\n"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "getProjectByName",
+							"request": {
+								"url": "http://localhost:4999/meta/project/byName/MilindaHouse",
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\":\"MilindaHouse\",\"connection_SSID\":\"SLT FIBRE\",\"connection_Password\":\"19511110\",\"ip\":\"192.168.8.1\"}\r\n"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Node",
+					"description": "",
+					"item": [
+						{
+							"name": "addNode",
+							"request": {
+								"url": "http://localhost:4999/meta/node",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"node-micro\",\n    \"ip\": \"192.168.1.2\",\n    \"port\": 5000,\n    \"project\":{\n\t    \"id\": 1,\n\t    \"name\": \"MilindaHouse\",\n\t    \"connection_SSID\": \"SLT FIBRE\",\n\t    \"connection_Password\": \"19511110\",\n\t    \"ip\": \"192.168.8.103\",\n\t    \"nodesList\": []\n    }\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "getNodeById",
+							"request": {
+								"url": "http://localhost:4999/meta/node/1",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\":\"MilindaHouse\",\"connection_SSID\":\"SLT FIBRE\",\"connection_Password\":\"19511110\",\"ip\":\"192.168.8.1\"}\r\n"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "updateNode",
+							"request": {
+								"url": "http://localhost:4999/meta/node/1",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"ip\":\"192.168.1.4\",\"type\":\"node-mini\", \"port\": \"5000\", \"project\":{\n    \"id\": 1,\n    \"name\": \"MilindaHouse\",\n    \"connection_SSID\": \"SLT FIBRE\",\n    \"connection_Password\": \"19511119\",\n    \"nodesList\": []\n}}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Device",
+					"description": "",
+					"item": [
+						{
+							"name": "addDevice",
+							"request": {
+								"url": "http://localhost:4999/meta/device",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"id\": 1,\n    \"name\": \"MilindaSwitch\",\n    \"groupName\": \"MilindaRoom\",\n    \"type\": \"bulb\",\n    \"defaultValue\": \"0\",\n    \"project\": \"MilindaHouse\",\n    \"connectedNode\": {\n        \"id\": 1,\n        \"type\": \"node-micro\",\n        \"ip\": \"192.168.1.2\",\n        \"port\": 5000,\n        \"project\": {\n            \"id\": 1,\n            \"name\": \"MilindaHouse\",\n            \"connection_SSID\": \"SLT FIBRE\",\n            \"connection_Password\": \"19511110\"\n        }\n    },\n    \"connectorSlot\": \"3\",\n    \"urlMap\": {\n        \"Switch-On\": \"http://192.168.1.5:8081/operate/switchOn\",\n        \"Switch-Off\": \"http://192.168.1.5:8081/operate/switchOff\"\n    }\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "getDeviceById",
+							"request": {
+								"url": "http://localhost:4999/meta/device/1",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\":\"MilindaHouse\",\"connection_SSID\":\"SLT FIBRE\",\"connection_Password\":\"19511110\",\"ip\":\"192.168.8.1\"}\r\n"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "getDeviceByProjectGroupName",
+							"request": {
+								"url": "http://localhost:4999/meta/device/byName/MilindaHouse/MilindaRoom/RoomLight",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\":\"MilindaHouse\",\"connection_SSID\":\"SLT FIBRE\",\"connection_Password\":\"19511110\",\"ip\":\"192.168.8.1\"}\r\n"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "updateDevice",
+							"request": {
+								"url": "http://localhost:4999/meta/device/1",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"name\": \"RoomLight\",\n    \"groupName\": \"MilindaRoom\",\n    \"type\": \"DSwitch\",\n    \"defaultValue\": \"0\",\n    \"project\": \"MilindaHouse\",\n    \"connectedNode\": {\n        \"id\": 1,\n        \"ip\": \"192.168.8.5\",\n        \"port\": 8081\n    },\n    \"connectorSlot\": \"4\",\n    \"urlMap\": {\n        \"ON\": \"http://192.168.8.100:8081/output/4/1/\",\n        \"OFF\": \"http://192.168.8.100:8081/output/4/0/\"\n    }\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "control",
+			"description": "",
+			"item": [
+				{
+					"name": "triggerSwitch",
+					"request": {
+						"url": "http://localhost:4999/control/switch",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"isDigital\": true,\n  \"value\": \"1\",\n  \"device\": {\n    \"device\": \"RoomLight\",\n    \"groupName\": \"MilindaRoom\",\n    \"project\": \"MilindaHouse\"\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "scanNodes",
+					"request": {
+						"url": "http://localhost:4999/manage/scan/MilindaHouse",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

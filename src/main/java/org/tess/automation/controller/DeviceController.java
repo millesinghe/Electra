@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/meta/device")
+@CrossOrigin(origins = {"*"})
 public class DeviceController {
 
 	@Autowired
@@ -41,9 +43,10 @@ public class DeviceController {
 		return ResponseEntity.ok().body(deviceRepo.findById(deviceId));
 	}
 
-	@DeleteMapping("/byName/{deviceId}")
-	public void deleteDevice(@PathVariable("deviceId") long deviceId) {
+	@DeleteMapping("/{deviceId}")
+	public Device deleteDevice(@PathVariable("deviceId") long deviceId) {
 		deviceRepo.deleteById(deviceId);
+		return new Device(deviceId);
 	}
 
 	@GetMapping("byName/{projectName}/{groupName}/{deviceName}")

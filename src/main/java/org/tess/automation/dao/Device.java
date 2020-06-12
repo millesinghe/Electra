@@ -33,6 +33,14 @@ public class Device implements Serializable {
 
 	private String project;
 
+	public Device() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Device(long deviceId) {
+		this.id = deviceId;
+	}
+
 	public String getProject() {
 		return project;
 	}

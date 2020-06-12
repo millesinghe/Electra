@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Node implements Serializable {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String type;
@@ -37,6 +36,13 @@ public class Node implements Serializable {
 	@JsonBackReference
 	private Project project;
 	
+	
+	public Node() {}
+	
+	public Node(long nodeId) {
+		this.id = nodeId;
+	}
+
 	public Long getId() {
 		return id;
 	}
