@@ -34,6 +34,7 @@ public class DeviceController {
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Device insertDevice(@RequestBody Device device) throws JsonMappingException, JsonProcessingException {
+		device.setStatus(device.getDefaultValue());
 		Device dev = deviceRepo.save(device);
 		return dev;
 	}
@@ -71,6 +72,7 @@ public class DeviceController {
 		device.setConnectedNode(updatedDevice.getConnectedNode());
 		device.setConnectorSlot(updatedDevice.getConnectorSlot());
 		device.setDefaultValue(updatedDevice.getDefaultValue());
+		device.setStatus(updatedDevice.getDefaultValue());
 		device.setGroupName(updatedDevice.getGroupName());
 		device.setName(updatedDevice.getName());
 		device.setProject(updatedDevice.getProject());

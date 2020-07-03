@@ -1,5 +1,6 @@
 package org.tess.automation.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.management.relation.RelationNotFoundException;
@@ -52,7 +53,16 @@ public class ProjectController {
 		if (! res.isPresent()) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		return ResponseEntity.ok().body(projectRepo.findById(projectId));
+		return ResponseEntity.ok().body(res);
+	}
+	
+	@GetMapping("")
+	public ResponseEntity<List<Project>> getProject() {
+		 List<Project> res = projectRepo.findAll();
+		if (res.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return ResponseEntity.ok().body(res);
 	}
 
 	@DeleteMapping("/{projectId}")

@@ -31,6 +31,8 @@ public class Device implements Serializable {
 
 	private String defaultValue;
 
+	private String status;
+
 	private String project;
 
 	public Device() {
@@ -122,5 +124,13 @@ public class Device implements Serializable {
 
 	public void setUrlMap(Map<String, String> urlMap) {
 		this.urlMap = urlMap;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }
