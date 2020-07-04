@@ -34,7 +34,10 @@ public class OperationController {
 		ElectraDevice reqDevice = request.getDevice();
 		Device triggerDevice = deviceRepo.findByProjectAndGroupNameAndName(reqDevice.getProject(),
 				reqDevice.getGroupName(), reqDevice.getDevice());
-
+		triggerDevice.setStatus(request.getValue());
+		Device dev = deviceRepo.save(triggerDevice);
+		System.out.println(request + "request Accepted and Updated the DB");
+		
 		String reqAppender = "analogOutput";
 		if(request.getIsDigital()) {
 			reqAppender = "output";
@@ -42,7 +45,7 @@ public class OperationController {
 		
 		new ConnectionHandler().callToNode(triggerDevice.getConnectedNode().getIp(), triggerDevice.getConnectedNode().getPort(),
 				triggerDevice.getConnectorSlot(), request.getValue(), reqAppender);
-		System.out.println(triggerDevice);
+		System.out.println("Command Send to the Node Device");
 	}
 
 	@PostMapping("/sensor")
